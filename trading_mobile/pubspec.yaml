@@ -1,0 +1,30 @@
+name: trading_mobile
+description: AI Trading mobile client — Flutter + Riverpod.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: ^2.6.1
+  dio: ^5.7.0
+  flutter_secure_storage: ^9.2.2
+  go_router: ^14.6.2
+  intl: ^0.20.2
+  google_fonts: ^6.2.1
+  flutter_animate: ^4.5.2
+  webview_flutter: ^4.10.0
+  shared_preferences: ^2.5.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
