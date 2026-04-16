@@ -1,0 +1,8 @@
+[project]
+name = "ai-trading-api"
+version = "0.1.0"
+requires-python = ">=3.11"
+
+# Tells Vercel where the FastAPI application lives (see Vercel FastAPI docs).
+[project.scripts]
+app = "app.main:app"
