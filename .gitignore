@@ -1,0 +1,29 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Flutter / Dart
+trading_mobile/.dart_tool/
+trading_mobile/build/
+trading_mobile/.flutter-plugins
+trading_mobile/.flutter-plugins-dependencies
+**/doc/api/
+
+# IDE (optional local junk)
+.idea/caches/
+
+# OS
+.DS_Store
+Thumbs.db
