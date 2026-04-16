@@ -5,8 +5,15 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-if [[ -n "${VERCEL:-}" ]] && [[ -n "${VERCEL_URL:-}" ]] && [[ ! "${VERCEL_URL}" =~ ^https?:// ]]; then
-  export API_BASE_URL="https://${VERCEL_URL}"
+# Prefer explicit dashboard env (e.g. custom domain); then Vercel preview/prod URL.
+if [[ -n "${API_PUBLIC_URL:-}" ]]; then
+  API_BASE_URL="$API_PUBLIC_URL"
+elif [[ -n "${VERCEL:-}" ]] && [[ -n "${VERCEL_URL:-}" ]]; then
+  if [[ "${VERCEL_URL}" =~ ^https?:// ]]; then
+    API_BASE_URL="${VERCEL_URL}"
+  else
+    API_BASE_URL="https://${VERCEL_URL}"
+  fi
 else
   API_BASE_URL="${API_BASE_URL:-http://127.0.0.1:8000}"
 fi
